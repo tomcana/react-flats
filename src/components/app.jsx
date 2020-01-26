@@ -12,7 +12,7 @@ class App extends Component {
         lat: 48.884211,
         lng: 2.34689
       }
-    }
+    };
   }
 
   selectSet = (mapinfo) => {
@@ -22,6 +22,7 @@ class App extends Component {
         lng: mapinfo.lng
       }
     });
+    console.log("app selectSet clicked");
   }
 
   render() {
@@ -29,7 +30,7 @@ class App extends Component {
     return (
       <div>
         <div className="left-scene">
-          <FlatList flats={flats} selectFunc={this.props.selectSet} />
+          <FlatList flats={flats} selectFunc={this.selectSet} />
         </div>
         <div className="right-scene">
           <div><SimpleMap center={center} /></div>

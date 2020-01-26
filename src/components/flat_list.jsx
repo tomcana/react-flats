@@ -3,9 +3,6 @@ import Flat from './flat';
 
 class FlatList extends Component {
   handleUpdate = (center) => {
-    console.log("clicked");
-    console.log(center);
-    console.log(this.props);
     this.props.selectFunc(center);
   }
 
