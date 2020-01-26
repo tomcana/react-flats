@@ -9,7 +9,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      flats
     }
   }
 
@@ -17,7 +16,7 @@ class App extends Component {
     return (
       <div>
         <div className="left-scene">
-          <FlatList flats={this.state.flats} />
+          <FlatList flats={flats} />
         </div>
         <div className="right-scene">
           <div><SimpleMap /></div>
