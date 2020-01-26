@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Flat = (flat) => {
-  const bgStyle = {
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('${flat.imageUrl}')`
+class Flat extends Component {
+  handleClick = () => {
+    const center = {
+      lat: this.props.lat,
+      lng: this.props.lng
+    }
+    this.props.handleUpdate(center);
   }
-  return (
-    <div className="card" style={bgStyle}>
-      <p>{flat.priceCurrency}{flat.price}</p>
-      <h4>{flat.name}</h4>
-    </div>
-  );
+  render() {
+    const bgStyle = {
+      backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('${this.props.imageUrl}')`
+    }
+    return (
+      <div className="card" style={bgStyle} onClick={this.handleClick} >
+      <p>{this.props.priceCurrency}{this.props.price}</p>
+      <h4>{this.props.name}</h4>
+      </div>
+    );
+  }
 }
 
 export default Flat;

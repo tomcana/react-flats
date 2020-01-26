@@ -4,22 +4,35 @@ import FlatList from './flat_list';
 import flats from '../../data/flats';
 import SimpleMap from './map';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      center: {
+        lat: 48.884211,
+        lng: 2.34689
+      }
     }
   }
 
+  selectSet = (mapinfo) => {
+    this.setState({
+      center: {
+        lat: mapinfo.lat,
+        lng: mapinfo.lng
+      }
+    });
+  }
+
   render() {
+    const { center } = this.state;
     return (
       <div>
         <div className="left-scene">
-          <FlatList flats={flats} />
+          <FlatList flats={flats} selectFunc={this.props.selectSet} />
         </div>
         <div className="right-scene">
-          <div><SimpleMap /></div>
+          <div><SimpleMap center={center} /></div>
         </div>
       </div>
     );
