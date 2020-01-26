@@ -27,14 +27,16 @@ class App extends Component {
 
   render() {
     return (
-        <FlatList
-          flats={this.state.flats}
-          selectedFlat={this.state.selectedFlat}
-        />
-        <div className="map-container">
-          <GoogleMapReact defaultCenter={this.center()} defaultZoom={12}>
-            <Marker lat={this.state.selectedFlat.lat} lng={this.state.selectedFlat.lng} />
-          </GoogleMapReact>
+        <div>
+          <FlatList
+            flats={this.state.flats}
+            selectedFlat={this.state.selectedFlat}
+          />
+          <div className="map-container">
+            <GoogleMapReact defaultCenter={this.center()} defaultZoom={12}>
+              <Marker lat={this.state.selectedFlat.lat} lng={this.state.selectedFlat.lng} />
+            </GoogleMapReact>
+          </div>
         </div>
     );
   }
