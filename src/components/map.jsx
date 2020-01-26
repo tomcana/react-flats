@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import Marker from './marker';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class SimpleMap extends Component {
+  // todo ここに選んだFlatが入る
   static defaultProps = {
     center: {
       lat: 59.95,
@@ -21,7 +23,7 @@ class SimpleMap extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <AnyReactComponent
+          <Marker
             lat={59.955413}
             lng={30.337844}
             text="My Marker"
